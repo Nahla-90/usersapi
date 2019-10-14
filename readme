@@ -1,0 +1,51 @@
+Url Checker API (Symfony): http://urlcheckerapi.dev
+
+First : Install virtual host on apache 
+
+ 1- create anew file urlcheckerapi.dev in your vhosts files. 
+ 2- add this code to it.
+  <VirtualHost *:80>
+    ServerName urlcheckerapi.dev
+    ServerAlias www.urlcheckerapi.dev
+
+    DocumentRoot /var/www/urlcheckerapi/public
+    <Directory /var/www/urlcheckerapi/public>
+        AllowOverride All
+        Order Allow,Deny
+        Allow from All
+    </Directory>
+
+    # uncomment the following lines if you install assets as symlinks
+    # or run into problems when compiling LESS/Sass/CoffeeScript assets
+    # <Directory /var/www/urlcheckerapi>
+    #     Options FollowSymlinks
+    # </Directory>
+
+    ErrorLog /var/log/apache2/urlcheckerapi_error.log
+    CustomLog /var/log/apache2/urlcheckerapi_access.log combined
+</VirtualHost>
+
+3- add vhost name in hosts file in /etc/hosts
+  127.0.0.1   urlcheckerapi.dev
+
+4- restart apache using #service apache2 restart
+ 
+Secound: Install Project ( You should have symfony installed)
+1- extract project folder in /var/www
+2- install required bundles 
+
+
+Third : Install database
+1- create database with config (you can change user&password as yours and config it on /config/packages/doctrine.yaml)
+        dbname:   "urlchecker"
+        user:     "postgres"
+        password: "postgres"
+2- run #php bin/console make:migration
+3- run #php bin/console doctrine:migrations:migrate
+
+
+
+
+
+
+
