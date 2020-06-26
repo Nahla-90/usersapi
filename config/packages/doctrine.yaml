@@ -10,10 +10,10 @@ doctrine:
         # configure these for your database server
         driver:   "pdo_pgsql"
         host:     "127.0.0.1"
-        port:     "5432"
-        dbname:   "urlchecker"
-        user:     "postgres"
-        password: "postgres"
+        port:     ""
+        dbname:   ""
+        user:     ""
+        password: ""
         server_version: '10.9'
         charset: UTF8
         default_table_options:

@@ -4,6 +4,8 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
+    application.data_provider_path: "%kernel.root_dir%/../src/DataProviders"
+
 
 services:
     # default configuration for services in *this* file
